@@ -46,3 +46,4 @@ scoop update *
 | 软件 | 版本策略 | 说明 |
 |---|---|---|
 | zditor | checkver: github | Tauri 所见即所得 Markdown 编辑器（NSIS 解包安装） |
+| prompt-optimizer | checkver: github | AI 提示词优化器（Electron 便携 zip 版） |
