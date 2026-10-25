@@ -7,7 +7,7 @@
 **其他机器接入（推荐，需 Git）：**
 
 ```bash
-scoop bucket add mine https://github.com/<你的用户名>/my-scoop-bucket
+scoop bucket add mine https://github.com/tinkerJ/scoop-bucket
 scoop install mine/zditor
 ```
 
@@ -20,7 +20,7 @@ scoop bucket add mine "C:\Users\wda20\WorkBuddy\2026-10-24-15-29-18\my-scoop-buc
 **单次安装（不建 bucket）：**
 
 ```bash
-scoop install https://raw.githubusercontent.com/<你的用户名>/my-scoop-bucket/main/bucket/zditor.json
+scoop install https://raw.githubusercontent.com/tinkerJ/scoop-bucket/main/bucket/zditor.json
 ```
 
 ## 日常维护
