@@ -1,0 +1,46 @@
+{
+    "version": "5.9.2",
+    "description": "WorkBuddy - Tencent's all-in-one AI office agent desktop client (China edition)",
+    "homepage": "https://www.workbuddy.cn",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://www.workbuddy.cn/"
+    },
+    "notes": [
+        "China edition (Tencent). Overseas build: https://www.workbuddy.ai",
+        "The client's built-in 'Check for updates' overwrites its own install dir - prefer 'scoop update workbuddy'.",
+        "Sign in with WeChat QR / phone / SSO; grant local folder access on first run.",
+        "Scoop install does not register the workbuddy:// protocol or file associations.",
+        "Custom config dir: set env WORKBUDDY_CONFIG_DIR."
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://download.codebuddy.cn/workbuddy/saas/win32-x64-user/WorkBuddy-win32-x64-user-5.9.2.42136757-0b5051be.exe#/dl.7z",
+            "hash": "1a94726ecc9c5e065a18cb50cab4305c7d9629d154446cb7fa643cf09b7f7022"
+        }
+    },
+    "installer": {
+        "script": [
+            "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\" -Removal",
+            "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\" -Recurse -Force -ErrorAction SilentlyContinue"
+        ]
+    },
+    "bin": "WorkBuddy.exe",
+    "shortcuts": [
+        [
+            "WorkBuddy.exe",
+            "WorkBuddy"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.codebuddy.cn/docs/workbuddy/Download-History",
+        "regex": "WorkBuddy-win32-x64-user-([\\d.]+)\\.(?<build>\\d+)-(?<hash>[0-9a-f]{8})\\.exe"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://download.codebuddy.cn/workbuddy/saas/win32-x64-user/WorkBuddy-win32-x64-user-$version.$matchBuild-$matchHash.exe#/dl.7z"
+            }
+        }
+    }
+}
