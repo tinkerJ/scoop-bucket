@@ -29,8 +29,11 @@ scoop install https://raw.githubusercontent.com/tinkerJ/scoop-bucket/main/bucket
 
 ## workbuddy 补充说明
 
+> 官方 extras / spc bucket 里也有同名 `workbuddy`，但那是**海外版**（`workbuddy.ai`，主程序 `WorkBuddyAI.exe`，5.8.4）。本库这份是**中国版**（`workbuddy.cn`，主程序 `WorkBuddy.exe`，5.9.2），两者安装后互不覆盖，可共存。
+
 - **解包路径**：官方只发 `WorkBuddy-win32-x64-user-<版本>.<构建号>-<hash>.exe`（NSIS-3），本体在内层 `$PLUGINSDIR\app-64.7z`（约 449 MB，解开 1.3 GB），manifest 里 `Expand-7zipArchive` 后就地清理 `$PLUGINSDIR` 与卸载器 `$R0`，全程不跑安装器、不写注册表。
-- **自动更新**：`checkver` 从官方[历史版本页](https://www.codebuddy.cn/docs/workbuddy/Download-History)抓最新 Windows 链接（页面按版本倒序，首个匹配即最新），构建号与 hash 用命名组 `$matchBuild` / `$matchHash` 拼进下载地址；官方不发布校验值，scoop 会在 autoupdate 时自行下载算 hash（单独多下一次 429 MB）。
+- **自动更新**：`checkver` 从官方[历史版本页](https://www.codebuddy.cn/docs/workbuddy/Download-History)抓最新 Windows 链接（页面按版本倒序，首个匹配即最新），构建号与 hash 用命名组 `$matchBuild` / `$matchHash` 拼进下载地址；官方不在发布页提供校验值，scoop 会在 autoupdate 时自行下载算 hash（单独多下一次 429 MB）。
+- **另一条更新源**：官方更新接口 `https://www.workbuddy.cn/v2/update?platform=workbuddy-win32-x64-user` 直接返回 `version` / `url` / `sha256hash`，可用 `jsonpath` 取用免去重算 hash；但实测它滞后于发布页（接口 5.8.3 / 发布页 5.9.2），故本 manifest 以发布页为准。
 - **客户端自带「检查更新」**会覆盖自己所在的安装目录，用 scoop 管理时请以 `scoop update workbuddy` 为准。
 - **不注册的东西**：`workbuddy://` 协议、Office/文档文件关联、`WorkBuddyShareTarget.msix` 共享目标、开机自启与 RepairApp 服务。用不到可忽略；官方版还装着时无需处理（HKLM 里的关联优先生效）。
 - 官方版卸载后想保留协议唤起，把下面片段里的路径换成 scoop 目录执行一次（写入 HKCU，随用户配置）：
