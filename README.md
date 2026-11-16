@@ -12,6 +12,7 @@ scoop bucket add mine https://github.com/tinkerJ/scoop-bucket
 scoop install mine/zditor
 scoop install mine/prompt-optimizer
 scoop install mine/workbuddy
+scoop install mine/moeli-reader
 
 # 不建 bucket，单次直装
 scoop install https://raw.githubusercontent.com/tinkerJ/scoop-bucket/main/bucket/zditor.json
@@ -24,6 +25,7 @@ scoop install https://raw.githubusercontent.com/tinkerJ/scoop-bucket/main/bucket
 | [zditor](https://zditor.com) | 1.9.9 | Tauri 所见即所得 Markdown 编辑器，写作+绘图一体 | `zditor-v*` tag |
 | [prompt-optimizer](https://github.com/linshenkx/prompt-optimizer) | 2.12.0 | AI 提示词优化器，多模型接入（Electron 便携版） | `v*` tag |
 | [workbuddy](https://www.workbuddy.cn) | 5.9.2 | 腾讯 WorkBuddy 中国版，全场景 AI 办公客户端（Electron/NSIS 解包） | 官方历史版本页 |
+| [moeli-reader](https://reader.moeli.top) | 2.2.5 | Moeli 阅读，跨平台阅读应用（Flutter，Inno Setup 静默安装） | 官方下载页 |
 
 全部启用 `checkver` + `autoupdate`，`scoop update *` 即可自动跟进新版本。
 
