@@ -9,6 +9,23 @@
     ],
     "url": "https://1811761156.cdn.123clouddisk.cn/1811761156/Moeli%20%E9%98%85%E8%AF%BB/Windows/MoeliReader-2.2.5-windows-x64-setup.exe",
     "hash": "23d06fd0662b44126310506f55e42f640b6c3ca57d1806d90696ecf61b30575f",
+    "installer": {
+        "args": [
+            "/VERYSILENT",
+            "/SUPPRESSMSGBOXES",
+            "/NORESTART",
+            "/SP-",
+            "/DIR=$dir"
+        ]
+    },
+    "uninstaller": {
+        "file": "unins000.exe",
+        "args": [
+            "/VERYSILENT",
+            "/SUPPRESSMSGBOXES",
+            "/NORESTART"
+        ]
+    },
     "bin": "moeli_reader.exe",
     "shortcuts": [
         [
